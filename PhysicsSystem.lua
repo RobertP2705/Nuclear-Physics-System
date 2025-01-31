@@ -70,8 +70,8 @@ local function updateParticle(particle, deltaTime)
 	if bodyVelocity then
 		local prevVelocity = bodyVelocity.Velocity
 		local newVelocity = (prevVelocity + acceleration * deltaTime) * DAMPING
-		if(particle.Name == "Electron" and newVelocity.Magnitude > 10)then
-			bodyVelocity.Velocity = prevVelocity
+		if(particle.Name == "Electron" and newVelocity.Magnitude > 30)then
+			bodyVelocity.Velocity = prevVelocity + Vector3.new(math.random(0,1),math.random(0,1),math.random(0,1))
 		else
 			bodyVelocity.Velocity = newVelocity
 			particle.Position = particle.Position + newVelocity * deltaTime
