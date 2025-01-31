@@ -1,6 +1,8 @@
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local ParticleSystem = require(script.Parent.ParticleSystem)
+local PhysicsSystem = require(script.Parent.PhysicsSystem)
+
 ParticleSystem.init() 
 local function createParticleButtons()
 	local ScreenGui = Instance.new("ScreenGui")
@@ -25,6 +27,10 @@ local function createParticleButtons()
 			button.MouseButton1Click:Connect(function()
 				ParticleSystem.spawnParticle("Neutron")
 			end)
+		elseif name == "Clear Particles" then
+			button.MouseButton1Click:Connect(function()
+				PhysicsSystem.cleanupAllParticles()
+			end)
 		end
 
 		return button
@@ -33,6 +39,7 @@ local function createParticleButtons()
 	createButton("Spawn Proton", UDim2.new(0, 10, 0, 10))
 	createButton("Spawn Electron", UDim2.new(0, 10, 0, 70))
 	createButton("Spawn Neutron", UDim2.new(0, 10, 0, 130))
+	createButton("Clear Particles", UDim2.new(0, 10, 0, 190))
 end
 
 createParticleButtons()

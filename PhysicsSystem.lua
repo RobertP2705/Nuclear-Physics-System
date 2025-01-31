@@ -87,6 +87,12 @@ function PhysicsSystem.registerParticle(particle)
 		end
 	end)
 end
+function PhysicsSystem.cleanupAllParticles()
+	for particle in pairs(particles) do
+		particles[particle] = nil
+		particle:Destroy()
+	end
+end
 
 local function cleanupParticle(particle)
 	local character = workspace:FindFirstChild("ParticleCharacter")
