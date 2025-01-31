@@ -10,5 +10,3 @@ force and Yukawa potentials for the nuclear force calculation.
 
 You can play the game here:
 https://www.roblox.com/games/103736944355835/Nuclear-Physics-Engine
-
-Showcase Video Here:
