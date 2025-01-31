@@ -5,7 +5,7 @@ local PhysicsSystem = {}
 local particles = setmetatable({}, {__mode = "k"})
 local COULOMB_CONSTANT = 2000  
 local STRONG_FORCE_CONSTANT = 2000
-local STRONG_FORCE_RANGE = 10
+local STRONG_FORCE_RANGE = 100
 local MIN_DISTANCE = 0.3
 local DAMPING = 0.99  
 
