@@ -63,18 +63,6 @@ function ParticleSystem.spawnParticle(particleType)
 
 	local camera = workspace.CurrentCamera
 	if camera then
-		if particleType == "Electron" then
-			local bodyVelocity = particle:FindFirstChild("BodyVelocity")
-			if bodyVelocity then
-				local randomVel = Vector3.new(
-					math.random(-10, 10),
-					math.random(-10, 10),
-					math.random(-10, 10)
-				)
-				bodyVelocity.Velocity = randomVel
-			end
-		end
-
 		particle.CFrame = CFrame.new(camera.CFrame.Position + (camera.CFrame.LookVector * 20))
 	end 
 	particle.Parent = workspace
